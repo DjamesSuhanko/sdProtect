@@ -53,8 +53,10 @@ mv /tmp/rc.local /etc/rc.local
 
 #autostart do chromium
 echo "MODIFICANDO AUTOSTART DO CHROMIUM PARA FAZER CACHE NA RAM"
-egrep -v chromium /home/pi/.config/lxsession/LXDE-pi/autostart >/tmp/autostart
-echo "@/usr/bin/chromium-browser --noerordialogs --disable-session-crashed-bubble --disable-infobars --disk-cache-dir=/dev/shm/inradio-cache --disk-cache-size=400000000 --kiosk https://radios.srv.br/" >>/tmp/autostart
+#egrep -v chromium /home/pi/.config/lxsession/LXDE-pi/autostart >/tmp/autostart
+#echo "@/usr/bin/chromium-browser --noerordialogs --disable-session-crashed-bubble --disable-infobars --disk-cache-dir=/dev/shm/inradio-cache --disk-cache-size=400000000 --kiosk https://radios.srv.br/" >>/tmp/autostart
+sed -re 's,(.*br/),@/usr/bin/chromium-browser --noerordialogs --disable-session-crashed-bubble --disable-infobars --disk-cache-dir=/dev/shm/inradio-cache --disk-cache-size=400000000 --kiosk https://radios.srv.br/,' /home/pi/.config/lxsession/LXDE-pi/autostart >/tmp/autostart
+
 mv /tmp/autostart /home/pi/.config/lxsession/LXDE-pi/autostart
 chown pi.pi /home/pi/.config/lxsession/LXDE-pi/autostart
 chmod 644 /home/pi/.config/lxsession/LXDE-pi/autostart
