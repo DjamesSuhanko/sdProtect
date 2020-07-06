@@ -1,0 +1,13 @@
+[Unit]
+Description=Make read-only fs
+DefaultDependencies=no
+Conflicts=shutdown.target
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c "source /etc/default/dirrw.conf ; for d in $DIRS; do mount $d $d -o bind,ro && mount $d -o remount,rw ; done"
+RemainAfterExit=yes
+
+[Install]
+WantedBy=local-fs.target
