@@ -35,7 +35,8 @@ echo "DIRS=\"/var /etc /tmp /home/pi /opt\"" >/etc/default/dirrw.conf
 
 #servico
 echo "BAIXANDO ARQUIVO DE SERVICO"
-wget -c https://raw.githubusercontent.com/DjamesSuhanko/sdProtect/master/makepartro.service -O /lib/systemd/system/makepartro.service
+#wget -c https://raw.githubusercontent.com/DjamesSuhanko/sdProtect/master/makepartro.service -O /lib/systemd/system/makepartro.service
+cp makepartro.service /lib/systemd/system/
 systemctl enable makepartro
 
 #rc.local

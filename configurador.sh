@@ -12,6 +12,10 @@ OK_TO_REMOVE_TEAMVIEWER=`ps ax|egrep -i dwagent|wc -l`
     exit 0
 }
 
+#remover teamviewer
+echo "REMOVENDO TEAMVIEWER"
+apt-get remove -y teamviewer-host
+
 #desabilitar swap
 echo "DESABILITANDO SWAP"
 swapoff -a
