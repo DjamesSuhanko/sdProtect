@@ -58,4 +58,3 @@ egrep -v "gpu_mem" /boot/config.txt >/tmp/config.txt
 echo "gpu_mem=16" >>/tmp/config.txt
 mv /tmp/config.txt /boot/config.txt
 
-
