@@ -1,6 +1,5 @@
 #!/bin/bash
 #  File: <name>
-#  Author: J. F. Mitre <http://jfmitre.com>
 #  Created: seg 06 jul 2020 09:56:22
 #  Last Update: seg 06 jul 2020 09:56:22
 #  Notes:
